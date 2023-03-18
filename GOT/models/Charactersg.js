@@ -1,11 +1,27 @@
 import mongoose from "mongoose";
 
 const CharactersgSchema = new mongoose.Schema({
-  groups: [
-    {
-      type: String,
-    },
-  ],
+  groups: {
+    type: "array",
+    items: [
+      {
+        type: "object",
+        properties: {
+          name: {
+            type: "string",
+          },
+          characters: {
+            type: "array",
+            items: [
+              {
+                type: "string",
+              },
+            ],
+          },
+        },
+      },
+    ],
+  },
 });
 
 export default mongoose.model("Charactersg", CharactersgSchema);

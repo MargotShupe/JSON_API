@@ -9,6 +9,8 @@ import episodesdata from "../db/episodes.json" assert { type: "json" };
 async function seed() {
   await Charactersg.deleteMany({});
   await Charactersg.create(charactersgdata);
+  await Episodes.deleteMany({});
+  await Episodes.create(episodesdata);
 
   process.exit();
 }
