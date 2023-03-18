@@ -1,10 +1,7 @@
 import mongoose from "mongoose";
 
 const CharactersgSchema = new mongoose.Schema({
-  groups: {
-    name: String,
-  },
-  characters: [
+  groups: [
     {
       type: String,
     },
